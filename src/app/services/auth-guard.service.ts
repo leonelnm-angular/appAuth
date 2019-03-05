@@ -12,14 +12,10 @@ export class AuthGuardService implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, status: RouterStateSnapshot) {
 
-    console.log(next);
-
-    (this.auth.isAuthenticated()) ? return true : return false;
-
     if (this.auth.isAuthenticated()) {
-      console.log('"pasó"');
       return true;
     }
+
     return false;
   }
 }
